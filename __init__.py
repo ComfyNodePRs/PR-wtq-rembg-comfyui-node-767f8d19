@@ -1,7 +1,10 @@
+import torch
 from rembg import new_session, remove
 from PIL import Image
-import torch
 import numpy as np
+import folder_paths as comfy_paths
+
+MODELS_DIR = comfy_paths.models_dir
 
 # Tensor to PIL
 def tensor2pil(image):
@@ -34,6 +37,9 @@ class ImageRemoveBackgroundRembg:
 
 
     def remove_background(self, image, model_name):
+        os.environ['U2NET_HOME'] = os.path.join(MODELS_DIR, 'rembg')
+        os.makedirs(os.environ['U2NET_HOME'], exist_ok=True)
+        
         session = new_session(model_name)   
         image = pil2tensor(remove(tensor2pil(image), session = session))
         return (image,)
