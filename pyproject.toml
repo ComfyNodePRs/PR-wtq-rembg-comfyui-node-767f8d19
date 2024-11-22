@@ -9,6 +9,6 @@ Repository = "https://github.com/waytooquick/wtq-rembg-comfyui-node"
 #  Used by Comfy Registry https://comfyregistry.org
 
 [tool.comfy]
-PublisherId = ""
+PublisherId = "wtq"
 DisplayName = "wtq-rembg-comfyui-node"
 Icon = ""
