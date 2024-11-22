@@ -3,6 +3,7 @@ from rembg import new_session, remove
 from PIL import Image
 import numpy as np
 import folder_paths as comfy_paths
+import os
 
 MODELS_DIR = comfy_paths.models_dir
 
